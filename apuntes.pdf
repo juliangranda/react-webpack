@@ -2,3 +2,25 @@ instalar react
 
 npm install react react-dom
 npm init -y
+
+
+--------------------------------------------------------------------
+instalacion de dependencias babel o configuracion de webpack para react
+# NPM
+npm install -D @babel/core @babel/preset-env @babel/preset-react babel-loader
+
+crear archivo de babel y escribimos los presets que instalamos anteriormente:
+
+{
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    "@babel/plugin-transform-runtime"
+  ]
+}
+
+instalacion de dependencias de webpack
+
+npm i -D webpack webpack-cli webpack-dev-server
