@@ -1,0 +1,4 @@
+instalar react
+
+npm install react react-dom
+npm init -y
