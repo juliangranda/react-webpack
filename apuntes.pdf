@@ -24,3 +24,44 @@ crear archivo de babel y escribimos los presets que instalamos anteriormente:
 instalacion de dependencias de webpack
 
 npm i -D webpack webpack-cli webpack-dev-server
+
+
+---------------------------------------------------------------------------------
+webpack con html
+
+npm install -D html-loader html-webpack-plugin
+
+configuracion en webpack
+
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+en rules:
+              {
+                test: /\.html$/,
+                use:[
+                    {loader: 'html-loader'}
+                ]
+            }
+
+plugins:
+      plugins: [
+        new HtmlWebpackPlugin({
+            template: './public/index.html',
+            filename: './index.html'
+        })
+    ],
+
+
+en scripts:
+    "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack serve --mode development",
+    "build": "webpack --mode production "
+  },
+
+nota: no olvidar el mode:
+  mode development para servidor local
+  mode production para optimizacion de codigo con webpack
+
+ejecutamos:
+  script: npm run start
+
