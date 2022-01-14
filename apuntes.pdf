@@ -65,3 +65,29 @@ nota: no olvidar el mode:
 ejecutamos:
   script: npm run start
 
+
+  ------------------------------------------------------------------
+  css con webpack
+
+  npm install -D mini-css-extract-plugin css-loader style-loader sass sass-loader
+
+
+configuracion en webpack
+
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+rules:
+              {
+                test: /\.s[ac]ss$/,
+                use:[
+                    'style-loader',
+                    'css-loader',
+                    'sass-loader'
+                ]
+            }
+
+plugins:
+
+          new MiniCssExtractPlugin({
+            filename: '[name].css'
+        })
